@@ -5,7 +5,7 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t pythonapp-brayand ."
+                sh "docker build -t ttl.sh/pythonapp-brayand ."
             }
         }
 
