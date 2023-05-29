@@ -32,7 +32,7 @@ pipeline {
 
                     sh "ssh -l ${userName} -i ${KeyFile} 192.168.105.3 -C docker stop pythonapp || true"
                     sh "ssh -l ${userName} -i ${KeyFile} 192.168.105.3 -C docker rm pythonapp || true"
-                    sh "ssh -l ${userName} -i ${KeyFile} 192.168.105.3 -C docker run -d --name pythonapp -p 4444:4444 ttl.sh/pythonapp-brayand:1h"
+                    sh "ssh -l ${userName} -i ${KeyFile} 192.168.105.3 -C docker run -d --name pythonapp --restart=always -p 4444:4444 ttl.sh/pythonapp-brayand:1h"
                 }
             }
         }
