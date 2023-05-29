@@ -39,6 +39,7 @@ pipeline {
 
         stage('Health Check') {
             steps {
+                sh "sleep 5"
                 sh "curl -s http://192.168.105.3:4444/api"
             }
         }
